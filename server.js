@@ -14,7 +14,7 @@ app.get('/profil', (req, res) => {
     res.json({ matakuliah: 'Komputasi Awan', topik: 'Serverless Azure' });
 });
 
-// Exercise: Tambahan endpoint /waktu sesuai instruksi latihan
+// Exercise: Tambahan endpoint /waktu sesuai instruksi latihan modul
 app.get('/waktu', (req, res) => {
     res.json({ waktuServer: new Date().toISOString() });
 });
