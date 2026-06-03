@@ -1,4 +1,10 @@
-// Endpoint baru untuk mengembalikan waktu server
+const express = require('express');
+const app = express();
+
+// Port dinamis dari Azure, atau 8080 untuk lokal
+const PORT = process.env.PORT || 8080;
+
+// Endpoint baru /waktu
 app.get('/waktu', (req, res) => {
     const waktuServer = new Date();
     
@@ -8,4 +14,9 @@ app.get('/waktu', (req, res) => {
         waktu_lokal_string: waktuServer.toString(),
         timestamp: waktuServer.getTime()
     });
+});
+
+// Perintah menyalakan server
+app.listen(PORT, () => {
+    console.log(`Server nyala di port ${PORT}`);
 });
